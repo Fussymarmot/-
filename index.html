@@ -37,9 +37,21 @@
     </div>
     
     <h1>Приношу свои извинения</h1>
-    <audio autoplay loop>
+    <audio id="sound" loop>
         <source src="ochen.mp3" type="audio/mpeg">
     </audio>
+     <script>
+    function playSound() {
+        document.getElementById('sound').play();
+    }
+    
+    // Пробуем автозапуск
+    document.addEventListener('DOMContentLoaded', function() {
+        playSound().catch(e => {
+            console.log("Автовоспроизведение заблокировано");
+        });
+    });
+    </script>
 
     <script>
    
