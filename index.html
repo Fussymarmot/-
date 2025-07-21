@@ -4,51 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Шутка-стоны</title>
-
     <style>
-        *{
+        * {
             margin: 0;
             background-color: black;
         }
-        h1{
+
+        h1 {
             font-size: 25px;
             text-align: center;
             color: white;
         }
 
-        div{
-            
+        div {
             text-align: center;
             margin-top: 90px;
             margin-bottom: 30px;
-            
         }
-        img{
+
+        img {
             height: 180px;
             width: 200px;
             border-radius: 100px;
+            cursor: pointer;
         }
-
     </style>
 </head>
 <body>
     <div>
-        <img src="https://images.steamusercontent.com/ugc/2408950893812680732/ED46638C9B424AE61E10FA895D0D1FDF478EED5E/?imw=512&amp;imh=278&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true" alt="">
+        <img src="https://images.steamusercontent.com/ugc/2408950893812680732/ED46638C9B424AE61E10FA895D0D1FDF478EED5E/?imw=512&imh=278&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" alt="Картинка" onclick="playAudio()">
     </div>
-    
-    <h1>Приношу свои извинения</h1>
-    <audio autoplay hidden>
+
+    <h1>Нажми на картинку, чтобы получить извинения</h1>
+
+    <audio id="audio" loop>
         <source src="https://files.catbox.moe/l541gd.mp3" type="audio/mpeg">
     </audio>
-     <script>
-   
-    </script>
 
     <script>
-   
-    
-   
+        function playAudio() {
+            const audio = document.getElementById("audio");
+            audio.play().catch(e => {
+                alert("Автовоспроизведение заблокировано. Попробуй снова.");
+            });
+        }
     </script>
-    
 </body>
 </html>
